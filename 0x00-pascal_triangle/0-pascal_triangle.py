@@ -14,7 +14,7 @@ def pascal_triangle(n):
     if n <= 0:
         return pscl
     pscl = [[1]]
-    for i in range (1,n):
+    for i in range(1, n):
         temp = [1]
         for j in range(len(pscl[i-1]) - 1):
             temp.append(pscl[i-1][j]+pscl[i-1][j+1])
