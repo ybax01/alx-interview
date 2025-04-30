@@ -11,11 +11,11 @@ def minOperations(n):
     Calculates the fewest number of operations needed
     to result in exactly n H characters in the file.
     """
-    nOpe = 0
-    minOpe = 2
+    numberOps = 0
+    minOps = 2
     while n > 1:
-        while n % minOpe == 0:
-            nOpe += minOpe
-            n //= minOpe
+        while n % minOps == 0:
+            numberOpe += minOps
+            n //= minOps
         minOpe += 1
-    return nOpe
+    return numberOpe
