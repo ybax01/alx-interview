@@ -3,11 +3,10 @@
 0. UTF-8 Validation
 """
 
+
 def validUTF8(data):
     '''
     Determines if a given data set represents a valid UTF-8 encoding.
-    :param data: List of integers representing bytes.
-    :return: True if data is a valid UTF-8 encoding, else False.
     '''
     num_bytes = 0
 
