@@ -1,1 +1,1 @@
-Solving problems is the way to go
+Queens in their place up high
