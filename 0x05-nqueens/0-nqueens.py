@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""N Queens - Solving the classical problem"""
+""" N queens """
 import sys
 
 
@@ -18,23 +18,25 @@ if int(sys.argv[1]) < 4:
 n = int(sys.argv[1])
 
 
-n = int(sys.argv[1])
-
-def queens_finder(n, i=0, cols=[], diagoA=[], diagoB=[]):
-    """ find possible positions """
+def queens(n, i=0, a=[], b=[], c=[]):
+    """
+    Finding solutions
+    A is columns
+    B and C are the two types of diagonals
+    """
     if i < n:
         for j in range(n):
-            if j not in cols and i + j not in diagoA and i - j not in diagoB:
-                yield from queens_finder(n, i + 1, cols + [j], diagoA + [i + j], diagoB + [i - j])
+            if j not in a and i + j not in b and i - j not in c:
+                yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
     else:
-        yield cols
+        yield a
 
 
 def solve(n):
-    """Solving"""
+    """Main part"""
     k = []
     i = 0
-    for solution in queens_finder(n, 0):
+    for solution in queens(n, 0):
         for s in solution:
             k.append([i, s])
             i += 1
